@@ -5,7 +5,10 @@ const mongoose = require("mongoose"); // MySQL이 아니라 mongoose 사용
 require("dotenv").config(); // .env 사용
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
+app.listen(PORT, () => {
+  console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
+});
 
 // CORS 설정
 const allowedOrigins = [
@@ -48,6 +51,7 @@ const Comment = mongoose.model("Comment", commentSchema);
 app.get("/comments", async (req, res) => {
   try {
     const comments = await Comment.find().sort({ created_at: -1 });
+    console.log("💬 불러온 댓글 수:", comments.length);
     res.json(comments);
   } catch (err) {
     res.status(500).json({ error: "DB 조회 실패", detail: err });
