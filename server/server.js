@@ -1,16 +1,15 @@
-// server.js
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose"); // MySQL이 아니라 mongoose 사용
-require("dotenv").config(); // .env 사용
+const mongoose = require("mongoose");
+require("dotenv").config();
 
 const app = express();
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 3001;
 
-// CORS 설정
+// 미들웨어
+app.use(express.json());
+
+// CORS 허용 도메인 설정
 const allowedOrigins = [
   "http://localhost:5174",
   "https://react-landingpage-oquo.onrender.com"
@@ -18,7 +17,6 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: function (origin, callback) {
-    // 비어 있으면 (예: curl 등) 허용, 아니면 허용된 도메인인지 확인
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -43,11 +41,16 @@ const commentSchema = new mongoose.Schema({
   name: String,
   phone: String,
   comment: String,
-  created_at: { type: Date, default: Date.now }
+  created_at: {
+    type: Date,
+    default: Date.now
+  }
 });
-const Comment = mongoose.model("Comment", commentSchema);
 
-// GET: 댓글 목록
+// ❗ 여기에 변수로 정의해야 사용 가능
+const Comment = mongoose.model("Comment", commentSchema, "comments");
+
+// ✅ GET: 댓글 목록
 app.get("/comments", async (req, res) => {
   try {
     const comments = await Comment.find().sort({ created_at: -1 });
@@ -58,7 +61,7 @@ app.get("/comments", async (req, res) => {
   }
 });
 
-// POST: 댓글 등록
+// ✅ POST: 댓글 등록
 app.post("/comments", async (req, res) => {
   const { name, phone, comment } = req.body;
   try {
@@ -70,7 +73,7 @@ app.post("/comments", async (req, res) => {
   }
 });
 
-// 서버 실행
+// ✅ 서버 실행
 app.listen(PORT, () => {
   console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
 });
