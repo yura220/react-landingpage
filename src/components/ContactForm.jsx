@@ -66,21 +66,13 @@ function CommentForm() {
       </form>
 
       <table>
-        <thead>
-          <tr>
-            <th>이름</th>
-            <th>전화번호</th>
-            <th>댓글</th>
-            <th>등록일</th>
-          </tr>
-        </thead>
         <tbody>
           {commentList.map((c, index) => (
             <tr key={index}>
               <td><strong>{c.name}</strong></td>
-              <td>{c.phone}</td>
+              <td>{c.phone.replace(/(\d{3})-?\d{3,4}-?(\d{4})/, "$1-****-$2")}</td>
               <td>{c.comment}</td>
-              <td><small>{new Date(c.created_at).toLocaleString("ko-KR")}</small></td>
+              <td><small>{new Date(c.created_at).toLocaleDateString("ko-KR")}</small></td>
             </tr>
           ))}
         </tbody>
