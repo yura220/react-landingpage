@@ -12,7 +12,8 @@ app.use(express.json());
 // CORS 허용 도메인 설정
 const allowedOrigins = [
   "http://localhost:5174",
-  "https://react-landingpage-oquo.onrender.com"
+  "https://react-landingpage-oquo.onrender.com",
+  "https://react-landingpage-local.vercel.app"
 ];
 
 app.use(cors({
