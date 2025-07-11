@@ -1,0 +1,36 @@
+/* src\components\css\Sns.css */
+.sns {}
+
+.sns ul {
+  width: fit-content;
+}
+
+.sns li {
+  width: 100%;
+}
+
+.sns li a {}
+
+.sns li:nth-child(1) a {
+  background-image: url(../../img/svg/instagram.svg);
+}
+
+.sns li:nth-child(1) a:hover {
+  background-image: url(../../img/svg/instagram2.svg);
+}
+
+.sns li:nth-child(2) a {
+  background-image: url(../../img/svg/pinterest.svg);
+}
+
+.sns li:nth-child(2):hover a {
+  background-image: url(../../img/svg/pinterest2.svg);
+}
+
+.sns li:nth-child(3) a {
+  background-image: url(../../img/svg/notion.svg);
+}
+
+.sns li:nth-child(3):hover a {
+  background-image: url(../../img/svg/notion2.svg);
+}

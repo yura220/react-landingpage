@@ -1,0 +1,13 @@
+/* src\components\css\Counter.css */
+.Counter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Counter h2 {}
+
+.Counter h2::before {
+  content: "❤️";
+}

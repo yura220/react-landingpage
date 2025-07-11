@@ -1,0 +1,51 @@
+/* src\components\css\Header.css */
+header {
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  z-index: 10;
+}
+
+header .wrap {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-size: 0;
+  background-image: url(/img/svg/logo.svg);
+}
+
+header h1:hover {
+  background-image: url(/img/svg/logo-h.svg);
+}
+
+header ul {
+  gap: 50px;
+}
+
+header ul li {}
+
+header ul li a {
+  line-height: 3;
+}
+
+.nav-text {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 20px;
+  font: inherit;
+  color: #ddd;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.nav-text:hover {
+  color: #00D5E0;
+}

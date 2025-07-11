@@ -1,0 +1,102 @@
+
+/* ✅ 기본 스타일 */
+/* src\components\css\Title.css */
+#root{
+  background-color: #000;
+}
+
+#Title.wrap{
+  height: 90vh !important;
+}
+
+#Title.wrap p{
+  margin-top: 20px;
+  font-size: 78px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.text-effect-wrapper {
+  --spotlight-color: #69f6ff;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-effect-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: shimmer 5s infinite linear;
+  background:
+    radial-gradient(circle, var(--spotlight-color), transparent 25%) 0 0 / 25% 25%,
+    radial-gradient(circle, var(--spotlight-color), black 25%) 50% 50% / 12.5% 12.5%;
+  mix-blend-mode: color-dodge;
+  z-index: 3;
+}
+
+.text-effect-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: brightness(90%) contrast(150%);
+  z-index: 4;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translate3d(50%, 50%, 0);
+  }
+}
+
+.text {
+  --background-color: black;
+  --text-color: white;
+
+  --angle: 5deg;
+  --color-1: #0078E0;
+  --color-2: #00D5E0;
+  --color-3: #00E060;
+
+  position: relative;
+  color: transparent;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(3rem, 5vw, 8rem);
+  line-height: 1;
+  font-family: 'Paperlogy-8ExtraBold', sans-serif;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 0.03em var(--background-color),
+    0 0 0.03em var(--text-color);
+  width: 100%;
+  font-size: 150px;
+  letter-spacing: 0.03em;
+}
+
+.text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: brightness(150%) contrast(200%);
+  z-index: 1;
+}
+
+.text::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--angle), var(--color-1), var(--color-2), var(--color-3));
+  mix-blend-mode: color-dodge;
+  z-index: 2;
+}
+
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
