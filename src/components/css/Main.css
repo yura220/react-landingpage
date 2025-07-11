@@ -573,46 +573,43 @@ textarea {
   box-shadow: 0 0 10px #0FF3;
 }
 
-#Contact .wrap ul {
+#Contact .wrap tbody {
   margin-top: 20px;
   width: 100%;
   height: 550px;
+  display: block;
 }
 
-#Contact .wrap ul li {
+#Contact .wrap tbody tr {
   margin-bottom: 15px;
   display: grid;
-  column-gap: 20px;
-  grid-template-columns: 126px 126px 1fr;
+  column-gap: 15px;
+  grid-template-columns: 126px 126px 461px 1fr;
   font-size: 14px;
 }
 
-#Contact .wrap ul li strong {
-  grid-column: 1;
-  grid-row: 1;
-}
+#Contact .wrap tbody td strong {}
 
-#Contact .wrap ul li.form_li {
-  grid-template-columns: 126px 588px 1fr;
-}
-
-#Contact .wrap ul li p:nth-child(2) {
+#Contact .wrap tbody td:nth-child(2) {
   grid-column: 2;
   grid-row: 1;
   color: #808080;
 }
 
-#Contact .wrap ul li p:nth-child(3) {
+#Contact .wrap tbody td:nth-child(3) {
   grid-column: 3;
   grid-row: 1;
 }
 
-#Contact .wrap ul li small {
+#Contact .wrap tbody td:nth-child(4){
+  grid-column: 4;
+  grid-row: 1;
+  justify-self: end;
+}
+
+#Contact .wrap tbody td small {
   color: #808080;
   font-size: 12px;
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: last baseline;
 }
 
 
