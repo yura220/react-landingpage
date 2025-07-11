@@ -6,8 +6,11 @@ function CommentForm() {
   const [comment, setComment] = useState("");
   const [commentList, setCommentList] = useState([]);
 
+  // 🔧 Render 서버 주소
+  const API_URL = "https://react-landingpage-oquo.onrender.com";
+
   useEffect(() => {
-    fetch("http://localhost:3001/comments")
+    fetch(`${API_URL}/comments`)
       .then((res) => res.json())
       .then((data) => setCommentList(data))
       .catch((err) => console.error("댓글 불러오기 실패:", err));
@@ -19,15 +22,15 @@ function CommentForm() {
 
     const newComment = { name, phone, comment };
 
-    fetch("http://localhost:3001/comments", {
+    fetch(`${API_URL}/comments`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newComment),
     })
       .then((res) => res.json())
       .then(() => {
-        // 서버에 저장된 최신 목록 다시 불러오기
-        return fetch("http://localhost:3001/comments")
+        // 등록 후 목록 다시 불러오기
+        return fetch(`${API_URL}/comments`)
           .then((res) => res.json())
           .then((data) => setCommentList(data));
       })
@@ -62,25 +65,26 @@ function CommentForm() {
         <button type="submit">등록</button>
       </form>
 
-      {/* <ul>
-        {commentList.map((c, index) => (
-          <li key={index}>
-            <strong>{c.name}</strong> ({c.phone})<br />
-            {c.comment}<br />
-            <small>{c.created_at}</small>
-          </li>
-        ))}
-      </ul> */}
-      <tbody>
-        {commentList.map((c, index) => (
-          <tr key={index}>
-            <td><strong>{c.name}</strong></td>
-            <td>{c.phone}</td>
-            <td>{c.comment}</td>
-            <td><small>{c.created_at}</small></td>
+      <table>
+        <thead>
+          <tr>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>댓글</th>
+            <th>등록일</th>
           </tr>
-        ))}
-      </tbody>
+        </thead>
+        <tbody>
+          {commentList.map((c, index) => (
+            <tr key={index}>
+              <td><strong>{c.name}</strong></td>
+              <td>{c.phone}</td>
+              <td>{c.comment}</td>
+              <td><small>{new Date(c.created_at).toLocaleString("ko-KR")}</small></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
