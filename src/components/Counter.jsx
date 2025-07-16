@@ -8,7 +8,6 @@ const Counter = ({ icon = "❤️", id }) => {
   const [count, setCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [lastUpdated, setLastUpdated] = useState(null);
 
   // MongoDB에서 초기값 불러오기
   useEffect(() => {

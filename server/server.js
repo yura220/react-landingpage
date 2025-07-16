@@ -16,7 +16,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5174",
   "https://react-landingpage-oquo.onrender.com",
-  "https://react-landingpage-local.vercel.app"
+  "https://react-landingpage-sable.vercel.app"
 ];
 
 app.use(cors({
