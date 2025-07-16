@@ -1,9 +1,9 @@
 const portfolioData = [
   {
     id: 1,
-    title: '포트폴리오2',
-    desc: 'html 기반 포트폴리오 사이트입니다.',
-    skill: 'html, css, js',
+    title: 'VUE 포트폴리오',
+    desc: 'VUE 기반 포트폴리오 사이트입니다.',
+    skill: 'Vue, Router, CSS, JS',
     role: '개인 작업',
     day: '3',
     img: '/img/Portfolio1.png',

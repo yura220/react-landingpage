@@ -6,10 +6,13 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// 미들웨어
+// ✅ Counter 라우트 임포트
+const counterRoutes = require("./routes/counters");
+
+// ✅ 미들웨어
 app.use(express.json());
 
-// CORS 허용 도메인 설정
+// ✅ CORS 설정
 const allowedOrigins = [
   "http://localhost:5174",
   "https://react-landingpage-oquo.onrender.com",
@@ -37,7 +40,7 @@ mongoose.connect(process.env.MONGO_URI, {
   console.error("❌ MongoDB 연결 실패:", err);
 });
 
-// ✅ Mongoose 모델 정의
+// ✅ 댓글 모델 정의
 const commentSchema = new mongoose.Schema({
   name: String,
   phone: String,
@@ -47,11 +50,9 @@ const commentSchema = new mongoose.Schema({
     default: Date.now
   }
 });
-
-// ❗ 여기에 변수로 정의해야 사용 가능
 const Comment = mongoose.model("Comment", commentSchema, "comments");
 
-// ✅ GET: 댓글 목록
+// ✅ 댓글 API
 app.get("/comments", async (req, res) => {
   try {
     const comments = await Comment.find().sort({ created_at: -1 });
@@ -62,7 +63,6 @@ app.get("/comments", async (req, res) => {
   }
 });
 
-// ✅ POST: 댓글 등록
 app.post("/comments", async (req, res) => {
   const { name, phone, comment } = req.body;
   try {
@@ -74,7 +74,10 @@ app.post("/comments", async (req, res) => {
   }
 });
 
-// ✅ 서버 실행
+// ✅ 카운터 라우트 적용
+app.use("/api/counters", counterRoutes);
+
+// ✅ 서버 실행 (단 한 번만!)
 app.listen(PORT, () => {
   console.log(`🚀 서버 실행 중: http://localhost:${PORT}`);
 });
