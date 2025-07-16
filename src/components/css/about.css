@@ -1,0 +1,122 @@
+#about{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 91.6vh;
+}
+
+#about .wrap{
+  height: 100%;
+  width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding-top: 70px;
+}
+
+#about .img_box{
+  grid-column: 1;
+  width: 450px;
+  height: 650px;
+  justify-self: center;
+  align-self: center;
+}
+
+#about img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#about .right{
+  grid-column: 2;
+  justify-self: flex-start;
+  align-self: center;
+  height: 650px;
+}
+
+#about .greetings{
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#about .greetings li{
+  font-size: 14px;
+}
+
+#about .greetings .p_top{
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  border-radius: 20px;
+  color: #e4e3e6;
+  font-weight: 600;
+  line-height: 1.7;
+  border: 2px solid #CCFFFF;
+  box-shadow: 0 4px 12px rgba(0, 213, 224, 0.08), 0 8px 32px rgba(0, 213, 224, 0.1);
+}
+
+#about .greetings > li > p{
+  padding-bottom: 10px;
+}
+
+#about .personal_history{}
+
+#about .personal_history li{
+  padding: 7px 0;
+}
+
+#about h3{
+  font-size: 20px;
+  font-weight: 700;
+  color: #00D5E0;
+}
+
+#about .a_text{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#about .personal_history h4{
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+}
+
+#about .personal_history span{
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #BFFDFD;
+  color: #1A1A1A;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  padding: 2px 4px;
+}
+
+#about .personal_history .sub_title{
+  font-size: 11px;
+  color: #BFFDFD;
+  line-height: 1;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#about .personal_history .desc{
+  line-height: 1.6;
+  padding: 2px 0;
+  color: #bbb;
+}
+
+#about .personal_history .small{
+  font-size: 12px;
+  color: #808080;
+}
