@@ -1,6 +1,6 @@
-// src\components\Counter.jsx
+// src/components/Counter.jsx
 import { useState, useEffect } from "react";
-import './css/Counter.css'
+import './css/Counter.css';
 
 const API_BASE = "https://react-landingpage-oquo.onrender.com";
 
@@ -9,7 +9,6 @@ const Counter = ({ icon = "❤️", id }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // MongoDB에서 초기값 불러오기
   useEffect(() => {
     const fetchCount = async () => {
       try {
@@ -33,7 +32,6 @@ const Counter = ({ icon = "❤️", id }) => {
 
         const data = await response.json();
         setCount(data.count || 0);
-        setLastUpdated(data.updatedAt);
 
       } catch (err) {
         console.error('Fetch error:', err);
@@ -61,9 +59,7 @@ const Counter = ({ icon = "❤️", id }) => {
 
       const response = await fetch(`${API_BASE}/api/counters/${id}/increment`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
       });
 
       if (!response.ok) {
@@ -81,42 +77,15 @@ const Counter = ({ icon = "❤️", id }) => {
 
       const data = await response.json();
       setCount(data.count);
-      setLastUpdated(data.updatedAt);
       localStorage.setItem(`counter_${id}`, data.count);
 
     } catch (err) {
       console.error('Counter increment failed:', err);
-      setCount(count);
       setError(err.message);
 
       const fallbackCount = count + 1;
       setCount(fallbackCount);
       localStorage.setItem(`counter_${id}`, fallbackCount);
-    }
-  };
-
-  const handleReset = async () => {
-    try {
-      setError(null);
-      const response = await fetch(`${API_BASE}/api/counters/${id}/reset`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to reset counter');
-      }
-
-      const data = await response.json();
-      setCount(data.count);
-      setLastUpdated(data.updatedAt);
-      localStorage.setItem(`counter_${id}`, data.count);
-
-    } catch (err) {
-      setError(err.message);
-      console.error('Counter reset failed:', err);
     }
   };
 
