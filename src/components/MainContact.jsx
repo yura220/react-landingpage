@@ -1,26 +1,3 @@
-// import RequestBtn from "./RequestBtn";
-// import { Buttons, Buttons2, Buttons3 } from "./Buttons";
-// import ContactForm from "./ContactForm";
-
-// function MainContact() {
-//     return (
-//         <section id="Contact">
-//             <div className="wrap">
-//                 <h2 className="h2">Contact</h2>
-//                 <ContactForm />
-//                 {/* <Buttons text='문의하기' />
-//                 <Buttons2 text='문의하기' />
-//                 <Buttons3 text='문의하기' />
-//                 <RequestBtn text='문의하기' text2='신청하기' /> */}
-//             </div>
-//         </section>
-//     );
-// }
-// export default MainContact;
-
-// import ContactForm from "./ContactForm";
-// import RequestBtn from "./RequestBtn";
-// import {Buttons,Buttons2,Buttons3} from "./Buttons";
 import Contact_board from "./Contact_board";
 import ContactForm from "./ContactForm";
 
