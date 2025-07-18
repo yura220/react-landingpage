@@ -81,13 +81,13 @@ const portfolioData = [
   },
   {
     id: 9,
-    title: 'todo리스트',
+    title: '미니블로그',
     desc: 'Vue 3 기반으로 제작한 모바일용 미니블로그입니다.',
     skill: 'Vue 3, css, js',
     role: '개인 작업',
     day: '4',
     img: '/img/pf9.png',
-    url: 'mini-blog-swart.vercel.app',
+    url: 'https://mini-blog-three-sigma.vercel.app',
   },
 ];
 
