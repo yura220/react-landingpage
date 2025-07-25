@@ -77,7 +77,7 @@ const portfolioData = [
     role: '개인 작업',
     day: '3',
     img: '/img/pf8.png',
-    url: 'https://vue-shop.vercel.app',
+    url: 'https://vuetodolist-blue.vercel.app/',
   },
   {
     id: 9,
