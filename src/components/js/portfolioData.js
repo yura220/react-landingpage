@@ -11,6 +11,16 @@ const portfolioData = [
   },
   {
     id: 2,
+    title: '해커톤',
+    desc: '디자이너로 참여해 대상을 수상했습니다.',
+    skill: 'React, Router, CSS, JS',
+    role: '팀 작업',
+    day: '28',
+    img: '/img/pf2.jpg',
+    url: 'https://hackathon-gules-nine.vercel.app/',
+  },
+  {
+    id: 3,
     title: 'LALA 쇼핑몰',
     desc: 'MPA 라우팅 및 퍼블리싱을 담당했습니다.',
     skill: 'Vue, Router, CSS, JS',
@@ -20,7 +30,7 @@ const portfolioData = [
     url: 'https://vue-rara.vercel.app',
   },
   {
-    id: 3,
+    id: 4,
     title: '1:D day 클래스',
     desc: '디자인과 반응형을 담당했습니다.',
     skill: 'React, Router, CSS, JS',
@@ -30,7 +40,7 @@ const portfolioData = [
     url: 'https://1dday.vercel.app',
   },
   {
-    id: 4,
+    id: 5,
     title: '세미네 부엌',
     desc: '세비네 부엌 리뉴얼 디자인 랜딩페이지입니다.',
     skill: 'html, css, js',
@@ -40,7 +50,7 @@ const portfolioData = [
     url: 'https://semi-nine.vercel.app',
   },
   {
-    id: 5,
+    id: 6,
     title: '디자인플러스',
     desc: '디자인플러스 클론코딩 페이지입니다.',
     skill: 'html, css, js',
@@ -50,7 +60,7 @@ const portfolioData = [
     url: 'https://portfolio2-blond-iota.vercel.app/',
   },
   {
-    id: 6,
+    id: 7,
     title: 'LS그룹',
     desc: 'LS그룹 클론코딩 페이지입니다.',
     skill: 'html, css, js',
@@ -60,7 +70,7 @@ const portfolioData = [
     url: 'https://pf2-one.vercel.app/',
   },
   {
-    id: 7,
+    id: 8,
     title: 'HB페이퍼',
     desc: 'HB페이퍼 클론코딩 페이지입니다.',
     skill: 'html, css, jquery',
@@ -68,16 +78,6 @@ const portfolioData = [
     day: '16',
     img: '/img/pf7.png',
     url: 'https://pf3-sand.vercel.app',
-  },
-  {
-    id: 8,
-    title: 'todo리스트',
-    desc: 'Vue 3 기반으로 제작한 투두리스트입니다.',
-    skill: 'Vue 3, css, js',
-    role: '개인 작업',
-    day: '3',
-    img: '/img/pf8.png',
-    url: 'https://vuetodolist-blue.vercel.app/',
   },
   {
     id: 9,
