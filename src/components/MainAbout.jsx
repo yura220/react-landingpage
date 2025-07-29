@@ -28,6 +28,15 @@ export default function About({ onFooterClass }) {
               <h3 className="brown">경력사항</h3>
               <ul className="personal_history">
                 <li>
+                <div class="a_text">
+                  <h4>2025 약학 IT 창업해커톤</h4>
+                  <p class="sub_title"><span>디자이너</span>2025.7.26 ~ 2025.07.27</p>
+                </div>
+                  <p class="desc">해커톤에 디자이너로 참여하여 팀의 비주얼 아이덴티티를 총괄하여<br/>
+                    <span class="bold">대상을 수상</span>했습니다.</p>
+                <p class="small">사용 툴: Photoshop, Illustrator, Figma</p>
+              </li>
+                <li>
                   <div className="a_text">
                     <h4>비컴비</h4>
                     <p className="sub_title"><span>디자이너</span>2022.03 ~ 2024.03</p>
