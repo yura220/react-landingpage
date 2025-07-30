@@ -415,6 +415,7 @@ section {
   align-items: center;
   font-size: 14px;
   background-color: #BFFDFD;
+  color: #000;
 }
 
 #Portfolio .Counter button:hover {
