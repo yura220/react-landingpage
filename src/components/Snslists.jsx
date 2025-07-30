@@ -9,25 +9,31 @@ import instagramhover from '/img/svg/instagram2.png';
 import pinteresthover from '/img/svg/pinterest2.png';
 import notionhover from '/img/svg/notion2.png';
 
-// function Snslists(){ // 배열을 이용한 내용전달
-//     const sns=['인스타그램','핀터레스트','노션'];
-//     return(
-//         <ul>
-//             <Snslist text={sns[0]} />
-//             <Snslist text={sns[1]} />
-//             <Snslist text={sns[2]} />
-//         </ul>
-//     );
-// }
 function Snslists({ text1, text2, text3 }) {
     return (
         <ul className="sns">
-            <Snslist text={text1} bgimg={instagram} hoverimg={instagramhover} />
-            <Snslist text={text2} bgimg={pinterest} hoverimg={pinteresthover} />
-            <Snslist text={text3} bgimg={notion} hoverimg={notionhover} />
+            <Snslist
+                text={text1}
+                bgimg={instagram}
+                hoverimg={instagramhover}
+                link="https://www.instagram.com/yu_ra_8"
+            />
+            <Snslist
+                text={text2}
+                bgimg={pinterest}
+                hoverimg={pinteresthover}
+                link="https://kr.pinterest.com/ruddbfk/"
+            />
+            <Snslist
+                text={text3}
+                bgimg={notion}
+                hoverimg={notionhover}
+                link="https://www.notion.so/2407017f822b80b498c0ed86c58c4d45?source=copy_link"
+            />
         </ul>
     );
 }
+
 export default Snslists;
 
 
